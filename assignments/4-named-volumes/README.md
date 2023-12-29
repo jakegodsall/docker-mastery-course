@@ -17,7 +17,7 @@
 3. Create a `postgres` container with version `15.2` using the named volume:.
 
     ```bash
-        docker container run --detach --name psql2 --env POSTGRES_PASSWORD=password --volume psql-data:/var/lib/postgresql/data postgres:15.2
+    docker container run --detach --name psql2 --env POSTGRES_PASSWORD=password --volume psql-data:/var/lib/postgresql/data postgres:15.2
     ```
 
 4. Check logs to validate.
