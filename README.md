@@ -8,4 +8,4 @@ This repository is intended for educational purposes and to assist learners of t
 
 ### License
 
-This work is shared under the [MIT License]().
+This work is shared under the [MIT License](https://github.com/jakegodsall/docker-mastery-course/blob/main/LICENSE).
