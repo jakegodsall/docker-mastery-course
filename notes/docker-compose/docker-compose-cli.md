@@ -19,3 +19,9 @@ Stop and remove the containers, networks, and volumes created by `docker compose
 ```bash
 docker compose down
 ```
+
+Build/rebuild the services specified in the `docker-compose.yml` file that have a build context.
+
+```bash
+docker compose build
+```
