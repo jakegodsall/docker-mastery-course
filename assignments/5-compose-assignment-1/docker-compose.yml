@@ -1,0 +1,23 @@
+version: "2"
+
+services:
+  drupal:
+    image: drupal:9
+    ports:
+      - 8080:80
+    volumes:
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles
+      - drupal-themes:/var/www/html/themes
+
+  postgres:
+    image: postgres:14
+    environment:
+      - POSTGRES_DB=test_db
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
+
+volumes:
+  drupal-modules:
+  drupal-profiles:
+  drupal-themes:
