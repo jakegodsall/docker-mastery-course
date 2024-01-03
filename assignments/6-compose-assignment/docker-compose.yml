@@ -1,0 +1,36 @@
+version: "3"
+
+services:
+  custom_drupal:
+    build:
+      context: drupal
+      dockerfile: Dockerfile
+    ports:
+      - 8080:80
+    volumes:
+      - drupal-modules:/var/www/html/modules
+      - drupal-profiles:/var/www/html/profiles
+      - drupal-sites:/var/www/html/sites
+      - drupal-themes:/var/www/html/themes
+    depends_on:
+      - mariadb
+
+  mariadb:
+    image: mariadb
+    ports:
+      - 3306:3306
+    environment:
+      MARIADB_USER: example-user
+      MARIADB_DATABASE: mariadb
+      MARIADB_PASSWORD: password
+      MARIADB_ROOT_PASSWORD: password
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    restart: always
+
+volumes:
+  drupal-modules:
+  drupal-profiles:
+  drupal-sites:
+  drupal-themes:
+  mariadb_data:
